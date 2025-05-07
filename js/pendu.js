@@ -32,6 +32,7 @@ function commencerJeu() {
     document.getElementById('board').textContent = motAffiche.join(' ');
     document.getElementById('message').textContent = `Vous avez ${tentativesRestantes} tentatives restantes.`;
     document.getElementById('image-pendu').src = './images/0.png';
+    document.getElementById('image-pendu').classList.remove('animate-bounce')
     boutonRejouer.classList.add('hidden');
 
     afficherClavier();
@@ -79,8 +80,13 @@ motAffiche.forEach(char => {
 
     if (trouve) {
         if (motAffiche.join('') === motOriginal) {
+            const image = document.getElementById('image-pendu');
             document.getElementById('message').textContent = 'Félicitations, vous avez gagné ! 🎉';
-            document.getElementById('image-pendu').src = './images/win.png';
+            image.src = './images/win.png';
+
+            // Ajout de l'animation Tailwind
+            image.classList.add('animate-bounce');
+
             désactiverClavier();
             boutonRejouer.classList.remove('hidden');
         }
