@@ -46,7 +46,7 @@ function afficherClavier() {
     alphabet.forEach(letter => {
         const button = document.createElement('button');
         button.textContent = letter;
-        button.className = 'bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-3 m-1 rounded uppercase';
+        button.className = 'bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-3 w-10 rounded uppercase';
         button.onclick = () => testerLettre(letter);
         keyboardDiv.appendChild(button);
     });
