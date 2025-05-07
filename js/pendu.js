@@ -98,6 +98,10 @@ motAffiche.forEach(char => {
         if (tentativesRestantes === 0) {
             document.getElementById('message').textContent = `Vous avez perdu ! Le mot était "${motOriginal}".`;
             désactiverClavier();
+            //afficher image de sang
+            const bloodEffect = document.getElementById('blood-effect');
+            bloodEffect.classList.remove('hidden'); //afficher l'effet de sang
+            
             boutonRejouer.classList.remove('hidden');
         }
     }

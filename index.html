@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pendu JS</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      #blood-effect {
+        background-image: url(./images/sang.png);
+        background-size: cover;
+        z-index: 10;
+        opacity: 0.7;/*pour rendre transaparent*/
+      }
+    </style>
   </head>
 
   <body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
@@ -19,6 +27,9 @@
           class="w-32 md:w-48 mx-auto"
         />
       </div>
+      <!--effet de sang-->
+      <div id="blood-effect" class="hidden absolute top-0 left-0 w-full h-full bg-no-repeat bg-center"></div>
+
 
       <div id="message" class="mb-4 text-lg text-red-600 font-semibold"></div>
       <div id="board" class="mb-4 text-xl font-mono tracking-widest"></div>
